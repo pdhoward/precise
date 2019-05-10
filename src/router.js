@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
+import WordList from '@/components/WordList'
+import Word from '@/components/Word'
 import DemoOne from './components/DemoOne.vue'
 import DemoTwo from './components/DemoTwo.vue'
 import DemoThree from './components/DemoThree.vue'
@@ -16,6 +18,16 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/words',
+      name: 'WordList',
+      component: WordList
+    },
+    {
+      path: '/words/word/:id',
+      name: 'Word',
+      component: Word
     },
     {
       path: '/demo-1',

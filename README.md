@@ -32,3 +32,4 @@ npm run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+https://www.thepolyglotdeveloper.com/2018/04/vuejs-app-using-axios-vuex/
