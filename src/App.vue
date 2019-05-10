@@ -22,17 +22,10 @@
 </template>
 
 <script>
-import DemoOne from './components/DemoOne.vue'
-import DemoTwo from './components/DemoTwo.vue'
-import DemoThree from './components/DemoThree.vue'
-import DemoFour from './components/DemoFour.vue'
-import DemoFive from './components/DemoFive.vue'
-
 
 export default {
   name: 'app',
   components: {
-    DemoOne, DemoTwo, DemoThree, DemoFour, DemoFive
   },
   data () {
     return {
