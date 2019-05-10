@@ -1,9 +1,51 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './views/Home'
+import DemoOne from './components/DemoOne.vue'
+import DemoTwo from './components/DemoTwo.vue'
+import DemoThree from './components/DemoThree.vue'
+import DemoFour from './components/DemoFour.vue'
+import DemoFive from './components/DemoFive.vue'
 
 Vue.use(Router)
 
+export default new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/demo-1',
+      name: 'DemoOne',
+      component: DemoOne
+    },
+    {
+      path: '/demo-2',
+      name: 'DemoTwo',
+      component: DemoTwo
+    },
+    {
+      path: '/demo-3',
+      name: 'DemoThree',
+      component: DemoThree
+    },
+    {
+      path: '/demo-4',
+      name: 'DemoFour',
+      component: DemoFour
+    },
+    {
+      path: '/demo-5',
+      name: 'DemoFive',
+      component: DemoFive
+    }
+  ]
+})
+
+/*
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -19,7 +61,9 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      // webpackChunkName: "about"
+      component: () => import('./views/About.vue')
     }
   ]
 })
+*/

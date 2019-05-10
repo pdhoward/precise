@@ -1,51 +1,63 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-    <button @click="showWhich = 'DynamicOne'">Show Component One</button>
-    <button @click="showWhich = 'DynamicTwo'">Show Component Two</button>
-
-    <component :is="showWhich"></component>
+    <ul class="nav">
+      <li>
+        <router-link to="/demo-1">DemoOne</router-link>
+      </li>
+      <li>
+        <router-link to="/demo-2">DemoTwo</router-link>
+      </li>
+      <li>
+        <router-link to="/demo-3">DemoThree</router-link>
+      </li>
+      <li>
+        <router-link to="/demo-4">DemoFour</router-link>
+      </li>
+      <li>
+        <router-link to="/demo-5">DemoFive</router-link>
+      </li>
+    </ul>
+    <router-view></router-view>
   </div>
-  
 </template>
+
 <script>
-import DynamicOne from './components/DynamicOne.vue'
-import DynamicTwo from './components/DynamicTwo.vue'
+import DemoOne from './components/DemoOne.vue'
+import DemoTwo from './components/DemoTwo.vue'
+import DemoThree from './components/DemoThree.vue'
+import DemoFour from './components/DemoFour.vue'
+import DemoFive from './components/DemoFive.vue'
+
 
 export default {
   name: 'app',
   components: {
-    DynamicOne, DynamicTwo
+    DemoOne, DemoTwo, DemoThree, DemoFour, DemoFive
   },
-  data() {
+  data () {
     return {
-      showWhich: 'DynamicOne'
+      showWhich: 'DemoOne'
     }
   }
 }
 </script>
+
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+  margin-top: 60px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+ul.nav > li {
+  display: inline;
+  padding-left: 10px;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+ul.nav > li::before {
+  content: "\2630";
+  padding-right: 5px;
 }
 </style>
