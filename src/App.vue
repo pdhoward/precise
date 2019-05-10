@@ -5,9 +5,29 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-  </div>
-</template>
+    <button @click="showWhich = 'DynamicOne'">Show Component One</button>
+    <button @click="showWhich = 'DynamicTwo'">Show Component Two</button>
 
+    <component :is="showWhich"></component>
+  </div>
+  
+</template>
+<script>
+import DynamicOne from './components/DynamicOne.vue'
+import DynamicTwo from './components/DynamicTwo.vue'
+
+export default {
+  name: 'app',
+  components: {
+    DynamicOne, DynamicTwo
+  },
+  data() {
+    return {
+      showWhich: 'DynamicOne'
+    }
+  }
+}
+</script>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
