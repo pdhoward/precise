@@ -1,3 +1,5 @@
+
+/* eslint-disable */
 <template>
     <div class="home">
         <div class="input-container">
@@ -14,7 +16,7 @@
                     <router-link v-bind:to="{ name: 'WordList'}">Word List</router-link>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </template>
 
@@ -29,15 +31,12 @@
                 error: ''
             }
         },
-        computed: {
-            wordMeaning () {
-                if (this.wordData) {
-                    return this.wordData.senses[0].definition
-                }
-                return ''
-            },
+        computed: {           
             words () {
                 return this.$store.state.words
+            },
+            wordMeaning () {
+                return this.$store.state.wordMeaning
             }
         },
         methods: {
@@ -47,20 +46,22 @@
                     this.wordData = ''
                     return false
                 }
-                const response = await WordService.getWord({ word: this.word })
+                const response = await WordService.getWord({ word: this.word })               
 
-                let responses = response.data.results
-
-                if (responses.length === 0) {
+                if (response.length === 0) {
                     this.error = 'Your word could not be found and was not added.'
                     this.wordData = ''
                     return false
                 }
 
-                this.wordData = responses[0]
+                this.wordData = response[0]           
                 let words = this.words
-                if (!words.filter(word => word.headword === this.word).length > 0) {
-                    this.$store.commit('addWord', this.wordData)
+                //console.log(` going deeper into the app`)
+                console.log(this.wordData)
+                
+                if (!words.filter(word => word === this.word).length > 0) {
+                    this.$store.commit('addWord', this.wordData.meta.id)
+                    this.$store.commit('addMeaning', this.wordData.shortdef)
                 }
             }
         }

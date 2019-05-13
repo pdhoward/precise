@@ -32,17 +32,17 @@
 <script>
     import WordService from '@/services/WordService'
     export default {
-        name: 'WordList',
+        name: 'Word',
         data () {
             return {
                 word: this.$route.params.word,
-                wordId: this.$route.params.data.id,
+                wordId: this.$route.params.id,
                 senses: '',
                 partOfSpeech: ''
             }
         },
         mounted () {
-            this.getWordDetails(this.wordId)
+            this.getWordDetails(this.$route.params.id)
         },
         computed: {
             words () {
@@ -52,9 +52,12 @@
         methods: {
             async getWordDetails (params) {
                 const response = await WordService.getWordDetails(params)
-                let data = response.data.result
-                this.partOfSpeech = data.part_of_speech
-                this.senses = data.senses
+                console.log(`debug word vue`)
+                console.log(params)
+                console.log(response)
+                let data = response[0]
+                this.partOfSpeech = data.fl
+                this.senses = null
             },
             deleteWord (word) {
                 this.$store.commit('deleteWord', word)

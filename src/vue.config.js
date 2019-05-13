@@ -1,2 +1,2 @@
-export const lintOnSave = true
+export const lintOnSave = false
 export const runtimeCompiler = true
