@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='demo-container'>
     <button @click="showWhich = 'DynamicOne'">Show Component One</button>
 
     <button @click="showWhich = 'DynamicTwo'">Show Component Two</button>
@@ -44,3 +44,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+    .demo-container {
+        margin-top: 150px;
+    }
+</style>

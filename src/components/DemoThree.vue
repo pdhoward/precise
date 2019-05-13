@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='demo-container'>
     <component v-for="(field, index) in schema"
                :key="index"
                :is="field.fieldType"
@@ -54,3 +54,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+    .demo-container {
+        margin-top: 150px;
+    }
+</style>
