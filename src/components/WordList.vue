@@ -4,8 +4,8 @@
             <h2>My Stored Words:</h2>
             <div class="wordlist">
                 <ul>
-                    <li v-for="(word, index) in words" :key="index">
-                        <router-link v-bind:to="{ name: 'Word', params: { id: word.headword , word: word.headword, data:word} }">{{ word.headword }}</router-link>
+                    <li v-for="(word, index) in words" :key="word">
+                        <router-link v-bind:to="{ name: 'Word', params: { id: word , word: word, data:word} }">{{ word }}</router-link>
                     </li>
                 </ul>
             </div>
@@ -26,7 +26,7 @@
 
 <style lang="scss" scoped>
     .wordlist-container{
-        margin-top: 60px;
+        margin-top: 200px;
 
         .wordlist-columns{
             width: 100%;

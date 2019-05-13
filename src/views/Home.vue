@@ -30,7 +30,7 @@
                 wordData: '',
                 error: ''
             }
-        },
+        },        
         computed: {           
             words () {
                 return this.$store.state.words

@@ -47,7 +47,18 @@ export default {
       wordCount: 0,
       latestWord: 'Latest_Word'
     }
-  }
+  },
+  mounted () {
+      let words = this.$store.state.words
+      this.wordCount = words.length
+      let x = words.length
+      this.latestWord = words[x - 1]    
+    },
+  computed: {        
+    words () {
+        return this.$store.state.words
+    }      
+}
 }
 </script>
 
@@ -68,7 +79,7 @@ export default {
             position: fixed;
             width: 100%;
             padding: 10px;
-            color: white;
+            color: white;           
 
             a {
                 color: white;
@@ -78,7 +89,7 @@ export default {
 
         #header-nav {
             top: 0;
-            left: 0;
+            left: 0;           
         }
 
         #footer-nav {
