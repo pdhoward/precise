@@ -12,7 +12,7 @@
           <router-link :to="latestWord">{{ latestWord }}</router-link>
         </li>
         <li>
-          <router-link to="/search">Search</router-link>
+          <router-link to="/searchit">Search</router-link>
         </li>
         <li>
           <router-link to="/demo-1">DemoOne</router-link>

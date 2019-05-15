@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home'
 import WordList from '@/components/WordList'
 import Word from '@/components/Word'
-import Search from '@/components/Search'
+import SearchIt from '@/components/SearchIt'
 import DemoOne from './components/DemoOne.vue'
 import DemoTwo from './components/DemoTwo.vue'
 import DemoThree from './components/DemoThree.vue'
@@ -31,9 +31,9 @@ export default new Router({
       component: Word
     },
     {
-      path: '/search',
-      name: 'Search',
-      component: Search
+      path: '/searchit',
+      name: 'SearchIt',
+      component: SearchIt
     },
     {
       path: '/demo-1',

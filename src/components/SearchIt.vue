@@ -28,13 +28,15 @@
 
 
 export default {
-  name: "Search",
-  data: {
-    search: '',
-    category: '',
-    status: '',
-    results: null,
-    searchBtnDisabled: false
+  name: "SearchIt",
+  data() {
+    return {
+      search: '',
+      category: '',
+      status: '',
+      results: null,
+      searchBtnDisabled: false
+    }
   },
   methods: {
     searchProducts:function() {
