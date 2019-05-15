@@ -12,6 +12,9 @@
           <router-link :to="latestWord">{{ latestWord }}</router-link>
         </li>
         <li>
+          <router-link to="/search">Search</router-link>
+        </li>
+        <li>
           <router-link to="/demo-1">DemoOne</router-link>
         </li>
         <li>
@@ -64,7 +67,7 @@ export default {
 
 <style lang='scss'>
  body {
-        overflow: hidden;
+        overflow: scroll;
     }
 
     #app {
