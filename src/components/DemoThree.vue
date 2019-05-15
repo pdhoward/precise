@@ -20,9 +20,17 @@
     <form id="myForm">
       <input type="number" v-model.number="first"> + 
       <input type="number" v-model.number="second"> =
-      <input type="number" v-model="sum"> 
+      <input type="number" v-model.number="sum"> 
       <button @click.prevent="doSum">Sum</button>
     </form>
+    <hr>
+    <h1>Experiment 3</h1>
+    <div >
+      <h1>Github Repos</h1>
+      <ul class="app2">
+        <li v-for="repo in repos">{{repo.name}}</li>
+      </ul>  
+    </div>
   </div>
 </template>
 
@@ -45,10 +53,11 @@ export default {
       formData: {
         firstName: "Patrick"
       },
+      repos: [],
       resultText: "",
-      first: 0,
-      scond: 0,
       sum: 0,
+      first: 0,
+      second: 0,    
       schema: [
         {
           fieldType: "SelectList",
@@ -86,12 +95,30 @@ export default {
         doSum: function() {
           this.sum = this.first + this.second;
         }
-      }
+      },
+   created() {
+    fetch('https://api.github.com/repositories')
+    .then(res => res.json())
+    .then(res => {
+      //console.log(res)
+      this.repos = res
+      //this.repos.forEach(r => console.log(r.name))
+    })
+  }
 };
 </script>
 
 <style lang="scss" scoped>
     .demo-cont {
         margin-top: 150px;
+        overflow-y: auto; 
+        overflow-x: hidden;
+    }
+    .app2 {
+        margin-top: 10px;
+        height: 200px;
+        width: 600px;
+        border: red;
+        overflow: auto;         
     }
 </style>
