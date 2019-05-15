@@ -4,11 +4,11 @@
                :key="index"
                :is="field.fieldType"
                v-bind="field">
-
     </component>
     <p>
       Hello {{formData.title}} {{formData.firstName}} {{formData.lastName}}, I hear you are {{formData.age}} years old.
     </p>
+    <h1>Can you see me</h1>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import SelectList from '../components/v3/SelectList';
 import TextInput from '../components/v3/TextInput';
 
 export default {
-  name: "FormsDemo",
+  name: "DemoThree",
   components: { NumberInput, SelectList, TextInput },
   data() {
     return {

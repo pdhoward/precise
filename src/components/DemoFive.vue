@@ -16,7 +16,7 @@
 import FormGenerator from "../components/v5/FormGenerator";
 
 export default {
-  name: "GeneratorDemo",
+  name: "DemoFive",
   components: { FormGenerator },
   data() {
     return {

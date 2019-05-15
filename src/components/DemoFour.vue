@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='demo-contain'>
     <h1>Data Binding</h1>
     <component v-for="(field, index) in schema"
                :key="index"
@@ -10,7 +10,7 @@
     </component>
     <p>
       Hello {{formData.title}} {{formData.firstName}} {{formData.lastName}}, I hear you are {{formData.age}} years old.
-    </p>
+    </p>    
   </div>
 </template>
 
@@ -20,7 +20,7 @@ import SelectList from "../components/v4/SelectList";
 import TextInput from "../components/v4/TextInput";
 
 export default {
-  name: "FormsDemo",
+  name: "DemoFour",
   components: { NumberInput, SelectList, TextInput },
   data() {
     return {
@@ -59,3 +59,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+    .demo-contain {
+        margin-top: 250px;
+    }
+</style>

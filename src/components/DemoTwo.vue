@@ -17,7 +17,7 @@ import DynamicOne from '../components/v2/DynamicOne.vue';
 import DynamicTwo from '../components/v2/DynamicTwo.vue';
 
 export default {
-  name: "DemoOne",
+  name: "DemoTwo",
   components: {
     DynamicOne,
     DynamicTwo
