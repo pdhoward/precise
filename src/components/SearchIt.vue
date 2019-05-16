@@ -26,7 +26,6 @@
 <script>
    const productAPI = 'https://wt-c2bde7d7dfc8623f121b0eb5a7102930-0.sandbox.auth0-extend.com/productSearch';
 
-
 export default {
   name: "SearchIt",
   data() {
